@@ -1,0 +1,172 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	color: grey;
+	margin: 0 auto;
+	text-align: center;
+	background: #eee;
+	/*font-family: 'Roboto Condensed', sans-serif;*/
+	font-family: 'Droid Sans', sans-serif;
+}
+
+.hidden {
+	display: none;
+}
+
+a {
+	text-decoration: none;
+	color: steelblue;
+}
+
+a:hover {
+	text-decoration: underline overline;
+	color: grey;
+}
+
+header {
+	height: 100%;
+	left: 0;
+	position: fixed;
+	vertical-align: middle;
+	float: left;
+	width: 25%;
+	background-color: green;  /*change later; just visualizing the basic design*/
+	border-right: 2px solid steelblue;
+}
+
+.menu {
+	width: 100%;
+	height: 100%;
+	margin-top: 40%;
+}
+
+.links ul {
+	list-style: none;
+}
+
+.links ul li {
+	display: inline;
+}
+
+main {
+	margin: 0 auto;
+	width: 75%;
+	float: right;
+	margin-top: 5%;
+}
+
+.section {
+	margin-bottom: 10px;
+}
+
+.section#last-child {
+	margin-bottom: 50px;
+}
+
+.burger {
+	display: inline-block;
+	border-top: 1px solid grey;
+	border-bottom: 1px solid grey;
+	position: absolute;
+	top: 15px;
+	right: 20px;
+}
+
+.burger:hover {
+	cursor: pointer;
+}
+
+#intro img {
+	width: 25%;
+	float: left;
+	border-radius: 20%;
+}
+
+div.show {
+	border: 1px solid grey;
+	border-radius: 20%;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	position: relative;
+	top: 0;
+	left: 0;
+}
+
+.footer {
+	position: fixed;
+	bottom: 0;
+	width: 75%;
+	margin: 0 auto;
+	padding-bottom: 2%;
+	background: #eee;
+	z-index: 1;
+}
+
+.footer ul {
+	list-style: none;
+}
+
+.footer ul li {
+	display: inline;
+	padding: 10px;
+}
+
+@media (min-width: 620px) {
+	.burger {
+		display: none;
+	}
+}
+
+
+/*media queries, currently desktop first; refactor to mobile first*/
+@media (max-width: 620px) {
+	header {
+		width: 100%;
+		top: 0;
+		height: 50px;
+		border-bottom: 2px solid steelblue;
+	}
+
+	.menu {
+		margin-top: 6px;
+	}
+
+	.links.closed {
+		position: absolute;
+		right: -200px;
+		transition: right 1s;
+	}
+
+	.links {
+		width: 150px;
+		background-color: green;
+		position: absolute;
+		top: 50px;
+		right: -2px;
+		transition: right 1s;
+		z-index: 1;
+	}
+
+	.links ul li {
+		display: block;
+		border-bottom: 1px solid grey;
+	}
+
+	main {
+		width: 90%;
+		margin-left: 5%;
+		margin-right: 5%;
+		margin-top: 70px;
+	}
+
+	.footer {
+		width: 100%;
+		margin-left: 5%;
+		margin-right: 5%;
+	}
+}
