@@ -34,8 +34,12 @@ header {
 	vertical-align: middle;
 	float: left;
 	width: 25%;
-	background-color: green;  /*change later; just visualizing the basic design*/
+	background-color: steelblue;  /*change later; just visualizing the basic design*/
 	border-right: 2px solid steelblue;
+}
+
+header a {
+	color: floralwhite;
 }
 
 .menu {
@@ -49,7 +53,7 @@ header {
 }
 
 .links ul li {
-	display: inline;
+	display: block;
 }
 
 main {
@@ -144,7 +148,7 @@ div.show {
 
 	.links {
 		width: 150px;
-		background-color: green;
+		background-color: steelblue;
 		position: absolute;
 		top: 50px;
 		right: -2px;
