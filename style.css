@@ -8,9 +8,10 @@ body {
 	color: grey;
 	margin: 0 auto;
 	text-align: center;
-	background: #eee;
 	/*font-family: 'Roboto Condensed', sans-serif;*/
 	font-family: 'Droid Sans', sans-serif;
+	background: #eee url("img/sidebar.png") no-repeat fixed left;
+	background-size: 25vw 100vh;
 }
 
 .hidden {
@@ -28,23 +29,27 @@ a:hover {
 }
 
 header {
-	height: 100%;
+	height: 100vh;
+	width: 25vw;
 	left: 0;
 	position: fixed;
 	vertical-align: middle;
 	float: left;
-	width: 25%;
-	background-color: steelblue;  /*change later; just visualizing the basic design*/
-	border-right: 2px solid steelblue;
+	color: floralwhite;
 }
 
 header a {
 	color: floralwhite;
 }
 
+.init {
+	font-family: 'Niconne', cursive;
+	color: floralwhite;
+}
+
 .menu {
-	width: 100%;
-	height: 100%;
+	width: 25vw;
+	height: 100vh;
 	margin-top: 40%;
 }
 
@@ -58,9 +63,10 @@ header a {
 
 main {
 	margin: 0 auto;
-	width: 75%;
+	width: 75vw;
 	float: right;
-	margin-top: 5%;
+	margin-top: 5vh;
+	margin-bottom: 60px;
 }
 
 .section {
@@ -84,9 +90,19 @@ main {
 	cursor: pointer;
 }
 
+#intro {
+	height: 100vh;
+	width: 75vw;
+	padding-top: 25vh;
+	background-color: steelblue;
+	border: 2px solid navy;
+	color: #eee;
+}
+
 #intro img {
 	width: 25%;
 	float: left;
+	margin-left: 20px;
 	border-radius: 20%;
 }
 
@@ -104,7 +120,7 @@ div.show {
 .footer {
 	position: fixed;
 	bottom: 0;
-	width: 75%;
+	width: 75vw;
 	margin: 0 auto;
 	padding-bottom: 2%;
 	background: #eee;
@@ -138,6 +154,11 @@ div.show {
 
 	.menu {
 		margin-top: 6px;
+	}
+
+	.logo > div {
+		display: inline-block;
+		padding-right: 20px;
 	}
 
 	.links.closed {
