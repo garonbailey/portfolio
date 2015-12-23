@@ -83,10 +83,16 @@ main {
 	margin-left: 1vw;
 }
 
-.rails img {
+.rails img, .final img {
 	height: 17vh;
 	float: right;
 	margin-right: 2vw;
+}
+
+.mean img {
+	height: 17vh;
+	float: left;
+	margin-left: 2vw;
 }
 
 .burger {
