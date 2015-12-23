@@ -77,6 +77,18 @@ main {
 	margin-bottom: 50px;
 }
 
+.rails, .mean, .final {
+	height: 30vh;
+	margin-top: 1vh;
+	margin-left: 1vw;
+}
+
+.rails img {
+	height: 25vh;
+	float: right;
+	margin-right: 2vw;
+}
+
 .burger {
 	display: inline-block;
 	border-top: 1px solid grey;
