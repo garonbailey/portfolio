@@ -10,7 +10,7 @@ body {
 	text-align: center;
 	/*font-family: 'Roboto Condensed', sans-serif;*/
 	font-family: 'Droid Sans', sans-serif;
-	background: #eee url("img/sidebar.png") no-repeat fixed left;
+	background: #eee url("img/1.jpg") no-repeat;
 	background-size: cover;
 }
 
@@ -24,22 +24,32 @@ a {
 }
 
 a:hover {
-	text-decoration: underline overline;
 	color: grey;
 }
 
 header {
-	height: 100vh;
-	width: 25vw;
-	left: 0;
+	height: 10vh;
+	width: 100vw;
+	top: 0;
 	position: fixed;
-	vertical-align: middle;
-	float: left;
 	color: floralwhite;
+	background-color: steelblue;
+	border-bottom: 3px solid black;
 }
 
 header a {
 	color: floralwhite;
+}
+
+header > div {
+	display: inline-block;
+}
+
+.logo {
+	position: absolute;
+	top: 2vh;
+	left: 5vw;
+	text-align: left;
 }
 
 .init {
@@ -47,26 +57,45 @@ header a {
 	color: floralwhite;
 }
 
-.menu {
-	width: 25vw;
-	height: 100vh;
-	margin-top: 40%;
-}
-
-.links ul {
+.links ul, header > div ul, .content ul {
 	list-style: none;
 }
 
-.links ul li {
-	display: block;
+.links ul li, header > div ul li, .content ul li {
+	display: inline-block;
 }
 
 main {
 	margin: 0 auto;
-	width: 75vw;
-	float: right;
-	margin-top: 5vh;
-	margin-bottom: 60px;
+	margin-top: 12vh;
+	margin-bottom: 10vh;
+}
+
+.bubble {
+	height: 200px;
+	width: 200px;
+	border: 5px solid black;
+	border-radius: 100%;
+	margin-left: 5vw;
+	margin-right: 5vw;
+	margin-top: 20vh;
+	line-height: 200px;
+	text-align: center;
+	background-color: orange;
+	color: steelblue;
+}
+
+.bubble:hover {
+	height: 300px;
+	width: 300px;
+	line-height: 300px;
+	cursor: pointer;
+	background-color: green;
+}
+
+#bio {
+	background: url("img/me.jpg") no-repeat center;
+	background-size: cover;
 }
 
 .section {
