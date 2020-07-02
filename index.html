@@ -2,66 +2,122 @@
 <html>
 <head>
 	<title>Garon Bailey | Web Developer</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="style.css">
-	<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
-	<link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
-	<link href='https://fonts.googleapis.com/css?family=Niconne' rel='stylesheet' type='text/css'>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Inconsolata&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
+	<script src="./js/projects.js"></script>
+	<script src="script.js"></script>
 </head>
 <body>
-	<header>
-		<!-- logo divs: <div class="logo-square"><div class="logo-circle"><h3>GB</h3></div></div> -->
-		<div class="logo">
-			<ul>
-				<li class="title"><h1><a href="/">garon bailey</a> | </h1></li>
-				<li><h3>web developer</h3></li>
-			</ul>
-		</div>
-		<div class="burger">
-			<p>-----</p>
-		</div>
-		<div class="links">
-			<ul>
-				<li><a href="#">projects</a></li>
-				<li><a href="#">bio</a></li>
-				<li><a href="#">connect</a></li>
-			</ul>
-		</div>
-	</header>
-	<main>
-		<div class="content-wrapper">
-			<div class="tagline">
-				<h2 id="content-title">code. build. create.</h2>
-			</div>
-			<div class="content">
-				<div class="bubble-div">
-					<div class="bubble" id="projects">
-						<div class="opaque" id="project-filter"></div>
-					</div>
-				</div>
-				<div class="bubble-div">
-					<div class="bubble" id="bio">
-						<div class="opaque" id="bio-filter"> </div>
-					</div>
-				</div>
-				<div class="bubble-div">
-					<div class="bubble" id="connect">
-						<div class="opaque" id="connect-filter"></div>
-					</div>
+	<div class="navigation">
+		<div class="header">
+			<div class="header-link-container">
+				<div class="logo" id="header-link" onclick="changePage('home')">
+					<h1>garon bailey</h1>
+					<h2>code + create</h2>
 				</div>
 			</div>
-			<div class="footer">
-				<p>&copy;2015-2017 Garon Bailey</p>
-				<!-- <ul>
-					<li><a href="mailto:garon@garonbailey.com">Email me</a></li>
-					<li><a href="https://www.linkedin.com/in/garonbailey">LinkedIn</a></li>
-					<li><a href="https://github.com/garonbailey">Github</a></li>
-				</ul> -->
+			<div id="header-gradient"></div>
+		</div>
+		<div id="menu" class="closed">
+			<div class="nav" id="header-navigation">
+				<div id="work-nav-btn" class="nav-link" onclick="changePage('work')">work</div>
+				<div id="bio-nav-btn" class="nav-link" onclick="changePage('bio')">bio</div>
+				<div id="connect-nav-btn" class="nav-link" onclick="changePage('connect')">connect</div>
+			</div>
+			<div class="burger" id="menu-toggle" onclick="toggleMenu(this)">
+				<div class="part1"></div>
+				<div class="part2"></div>
+				<div class="part3"></div>
 			</div>
 		</div>
-	</main>
+	</div>
+	<div class="main">
+		<div id="layout-content-container">
+			<div id="home" class="content active">
+				<!-- Opens on home, animate the links (below) coming in, no menu visible since it's redundant -->
+				<div class="link-container" onclick="changePage('work')">
+					<div id="work-link" class="home-page-link"></div>
+					<div class="link-overlay">work</div>
+				</div>
+				<div class="link-container" onclick="changePage('bio')">
+					<div id="bio-link" class="home-page-link"></div>
+					<div class="link-overlay">bio</div>
+				</div>
+				<div class="link-container" onclick="changePage('connect')">
+					<div id="connect-link" class="home-page-link"></div>
+					<div class="link-overlay">connect</div>
+				</div>
+			</div>
+			<div id="work" class="content inactive">
+				<h2 class="content-header">Work</h2>
+				<img class="img-right" src="./img/circuit.jpg" />
+				<p>I'm currently working for Code Drifters in Atlanta, GA. My role is contracting on a team that builds applications related to interactive data visualizations. I use the D3.js library, as well as JavaScript, HTML, and CSS for front-end applications. Previously, I worked for BBVA Bank and UAB Hospital in Birmingham, AL.</p>
+				<br/>
+				<p>I have professional experience with many development tools, libraries, frameworks, and languages. My primary development focus is on JavaScript, and I feel comfortable with my ability to understand and use anything written in it. I've built back-end functionality and APIs with Node.js and MongoDB. I've used HTML and CSS since I was a teenager. I've used both AngularJS and React as front-end tools. I'm familiar with Git, Bootstrap, Flex, many AWS services, and jQuery. I've had at least some exposure to Semantic UI, Ruby on Rails, Java, Python, SQL databases, and ASP.NET as well.</p>
+				<h3 class="content-header">Example Projects</h3>
+				<p>Every job I've had so far has been building private, internal applications, which leaves me with no professional work to share, but here are a few things I've built in my spare time, with hopefully more added as I make them presentable:</p>
+				<div id="projects">
+					<div id="project-header">
+						<div id="project-back" class="arrow-btn inactive-btn"><i class="fas fa-arrow-left"></i></div>
+						<div id="project-title"></div>
+						<div id="project-forward" class="arrow-btn"><i class="fas fa-arrow-right"></i></div>
+					</div>
+					<div id="project-content"></div>
+				</div>
+			</div>
+			<div id="bio" class="content inactive">
+				<h2 class="content-header">Bio</h2>
+				<img class="img-left" src="./img/me.jpg" />
+				<p>I started building websites as a hobby when I was about 14-years-old, but I went to Auburn University with the plan to become a veterinarian, majoring in biology. Life seldom works out how you expect, though. I would switch my major to Interdisciplinary Studies, concentrating on English and writing before taking time off a few credit hours short of graduating. That's when I went to New York City to attend General Assembly's Web Development Immersive bootcamp course to change my career. Ever since, I've been working as a developer with a plan to eventually go back to finish that degree that I spent quite a bit of time and energy on.</p>
+				<br/>
+				<p>In my spare time, I play in an ice hockey league. I watch a lot of movies. Occasionally, I try to work on film projects as well, particularly enjoying writing stories or doing video work. I have played with cameras since I was about 12-years-old, even working as an event photographer and student newspaper photo editor for a time during college. I particularly enjoy following the Nashville Predators hockey team and Gritty, the enigmatic mascot of the Philadelphia Flyers. I'll play tennis if I feel like getting mad at myself.</p>
+				<br/>
+				<p>I'm happy to collaborate on a variety of projects, whether they're web-based, writing, or involve my camera.</p>
+			</div>
+			<div id="connect" class="content inactive">
+				<h2 class="content-header">Connect</h2>
+				<div id="connect-links">
+					<p>I can be found on the following services:
+						<div id="connect-link-container">
+							<div class="link-btn" onclick="externalLink('linkedin')">
+								<i class="fab fa-linkedin"></i> LinkedIn
+							</div>
+							<div class="link-btn" onclick="externalLink('github')">
+								<i class="fab fa-github"></i> github
+							</div>
+						</div>
+					</p>
+				</div>
+				<!--<br/>
+				<div>
+					<p>If you'd like to collaborate on a project, discuss how I can help you build your project, or just for more information, please send me a message!</p>
+					<br/>
+					<form id="contact-form" onsubmit="submitContact()">
+						<label for="name">Name</label>
+						<input type="text" id="name" name="name">
+						<br/>
+						<label for="email">Email</label>
+						<input type="email" id="email" name="_replyto">
+						<br/>
+						<label for="message">Message</label>
+						<textarea id="message" name="message" placeholder="Get in touch . . . "></textarea>
+						<br/>
+						<input type="submit" value="Send">
+					</form>
+				</div>-->
+			</div>
+		</div>
+		<div class="footer" id="footer">
+			<div id="footer-gradient"></div>
+			<div id="footer-text">&copy;<span id="copyright"></span> Garon Bailey</div>
+		</div>
+	</div>
 	
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script src="script.js"></script>
+	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> Do I need jquery? My initial thought is No. -->
 </body>
 </html>
