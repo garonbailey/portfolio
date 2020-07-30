@@ -332,37 +332,42 @@ img {
 	position: absolute;
 }
 
-#projects {
+#projects, #videos {
 	margin: 10px auto;
 	min-height: 200px;
 	width: 100%;
 	border-radius: 10px;
 	border: 2px solid #90C2E7;
-	background-color: #00A9A5;
+	/*background-color: rgba(0, 169, 165, 1);*/
 	/*display: inline-block;*/
 }
 
-#projects > div {
+#projects a, #videos a {
+	color: #1C3144;
+}
+
+#projects > div, #videos > div {
 	margin: 0;
 }
 
-#project-header {
+#project-header, #video-header {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	height: 60px;
-	background-color: rgba(11, 83, 81, 0.3);
-	border-bottom: 1px solid #90C2E7;
+	background-color: rgba(0, 169, 165, 0.7);
+	border-bottom: 2px solid #90C2E7;
 	text-align: center;
 }
 
-#project-title {
+#project-title, #video-title {
 	padding-top: 10px;
 }
 
-#project-content {
+#project-content, #video-content {
 	text-align: left;
 	padding: 20px;
+	background-color: rgba(0, 169, 165, 1);
 }
 
 #project-link {
@@ -370,17 +375,17 @@ img {
 	padding: 10px;
 }
 
-#project-back, #project-forward {
+#project-back, #project-forward, #video-back, #video-forward {
 	width: 75px;
 	text-align: center;
 	line-height: 60px;
 }
 
-#project-back {
+#project-back, #video-back {
 	border-right: 1px solid #596F62;
 }
 
-#project-forward {
+#project-forward, #video-forward {
 	border-left: 1px solid #596F62;
 }
 
@@ -417,7 +422,7 @@ img {
 	margin-bottom: 10px;
 }
 
-#bio-link {
+#about-link {
 	width: 100%;
 	height: 100%;
 	border-radius: 50%;
@@ -433,7 +438,7 @@ img {
 	height: 100%;
 	border-radius: 50%;
 	position: absolute;
-	background: url("./img/circuit.jpg");
+	background: url("./img/chip.jpg");
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -451,18 +456,67 @@ img {
 	background-size: cover;
 }
 
+#email-me {
+	margin: 0 auto !important;
+	margin-top: 5px !important;
+}
+
+.big-note {
+	font-size: 1.2em;
+	font-style: italic;
+}
+
 .active {
 	display: block;
 	position: absolute;
 	top: 0;
 }
 
-.inactive {
+.inactive, .inactive-div {
 	display: none;
 }
 
 .content p {
 	text-align: left;
+}
+
+.tabs {
+	border-bottom: 4px solid #00A9A5;
+	width: 100%;
+	margin-bottom: 10px;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+
+.tab {
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	border-top: 2px solid #00A9A5;
+	border-left: 2px solid #00A9A5;
+	border-right: 2px solid #00A9A5;
+	width: 70px;
+	margin-left: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+	height: 20px;
+	line-height: 20px;
+	cursor: pointer;
+	font-size: 1rem;
+	color: steelblue; /* don't care about tab colors right now, just something to test */
+	background-color: orange;
+}
+
+.tab:hover {
+	background-color: steelblue;
+	color: orange;
+}
+
+.active-tab {
+	cursor: default;
+	pointer-events: none;
+	background-color: steelblue;
+	color: orange;
 }
 
 input, textarea {
