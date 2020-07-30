@@ -25,7 +25,7 @@
 		<div id="menu" class="closed">
 			<div class="nav" id="header-navigation">
 				<div id="work-nav-btn" class="nav-link" onclick="changePage('work')">work</div>
-				<div id="bio-nav-btn" class="nav-link" onclick="changePage('bio')">bio</div>
+				<div id="about-nav-btn" class="nav-link" onclick="changePage('about')">about</div>
 				<div id="connect-nav-btn" class="nav-link" onclick="changePage('connect')">connect</div>
 			</div>
 			<div class="burger" id="menu-toggle" onclick="toggleMenu(this)">
@@ -43,9 +43,9 @@
 					<div id="work-link" class="home-page-link"></div>
 					<div class="link-overlay">work</div>
 				</div>
-				<div class="link-container" onclick="changePage('bio')">
-					<div id="bio-link" class="home-page-link"></div>
-					<div class="link-overlay">bio</div>
+				<div class="link-container" onclick="changePage('about')">
+					<div id="about-link" class="home-page-link"></div>
+					<div class="link-overlay">about</div>
 				</div>
 				<div class="link-container" onclick="changePage('connect')">
 					<div id="connect-link" class="home-page-link"></div>
@@ -54,29 +54,35 @@
 			</div>
 			<div id="work" class="content inactive">
 				<h2 class="content-header">Work</h2>
-				<img class="img-right" src="./img/circuit.jpg" />
+				<img class="img-right" src="./img/chip.jpg" />
 				<p>I'm currently working for Code Drifters in Atlanta, GA. My role is contracting on a team that builds applications related to interactive data visualizations. I use the D3.js library, as well as JavaScript, HTML, and CSS for front-end applications. Previously, I worked for BBVA Bank and UAB Hospital in Birmingham, AL.</p>
 				<br/>
-				<p>I have professional experience with many development tools, libraries, frameworks, and languages. My primary development focus is on JavaScript, and I feel comfortable with my ability to understand and use anything written in it. I've built back-end functionality and APIs with Node.js and MongoDB. I've used HTML and CSS since I was a teenager. I've used both AngularJS and React as front-end tools. I'm familiar with Git, Bootstrap, Flex, many AWS services, and jQuery. I've had at least some exposure to Semantic UI, Ruby on Rails, Java, Python, SQL databases, and ASP.NET as well.</p>
+				<p>I have professional experience with many development tools, libraries, frameworks, and languages. My primary development focus is on JavaScript, and I feel comfortable with my ability to understand and use anything written in it. I've built back-end functionality, services, and APIs with Node.js and MongoDB. I've used HTML and CSS since I was a teenager. I've used both AngularJS and React as front-end tools. I'm familiar with Git, Bootstrap, Flex, many AWS services, and jQuery. I've had at least some exposure to Semantic UI, Ruby on Rails, Java, Python, SQL databases, and ASP.NET as well.</p>
 				<h3 class="content-header">Example Projects</h3>
-				<p>Every job I've had so far has been building private, internal applications, which leaves me with no professional work to share, but here are a few things I've built in my spare time, with hopefully more added as I make them presentable:</p>
+				<p>Every job I've had so far has been building private, internal applications, which leaves me with no professional work to share, but here are a few things I've built in my spare time. Check back for more example projects being added as I make them presentable in the near future.</p>
 				<div id="projects">
 					<div id="project-header">
 						<div id="project-back" class="arrow-btn inactive-btn"><i class="fas fa-arrow-left"></i></div>
 						<div id="project-title"></div>
-						<div id="project-forward" class="arrow-btn"><i class="fas fa-arrow-right"></i></div>
+						<div id="project-forward" class="arrow-btn inactive-btn"><i class="fas fa-arrow-right"></i></div>
 					</div>
 					<div id="project-content"></div>
 				</div>
 			</div>
-			<div id="bio" class="content inactive">
-				<h2 class="content-header">Bio</h2>
-				<img class="img-left" src="./img/me.jpg" />
-				<p>I started building websites as a hobby when I was about 14-years-old, but I went to Auburn University with the plan to become a veterinarian, majoring in biology. Life seldom works out how you expect, though. I would switch my major to Interdisciplinary Studies, concentrating on English and writing before taking time off a few credit hours short of graduating. That's when I went to New York City to attend General Assembly's Web Development Immersive bootcamp course to change my career. Ever since, I've been working as a developer with a plan to eventually go back to finish that degree that I spent quite a bit of time and energy on.</p>
-				<br/>
-				<p>In my spare time, I play in an ice hockey league. I watch a lot of movies. Occasionally, I try to work on film projects as well, particularly enjoying writing stories or doing video work. I have played with cameras since I was about 12-years-old, even working as an event photographer and student newspaper photo editor for a time during college. I particularly enjoy following the Nashville Predators hockey team and Gritty, the enigmatic mascot of the Philadelphia Flyers. I'll play tennis if I feel like getting mad at myself.</p>
-				<br/>
-				<p>I'm happy to collaborate on a variety of projects, whether they're web-based, writing, or involve my camera.</p>
+			<div id="about" class="content inactive">
+				<h2 class="content-header">About</h2>
+				<!-- subtabs go back here -->
+				<div id="bio" class="active-div">
+					<img class="img-left" src="./img/me.jpg" />
+					<p>I started building websites as a hobby when I was about 14-years-old, but I went to Auburn University with the plan to become a veterinarian, majoring in biology. I had, and still have, a particular interest in genetics and evolution, as well as animal biodiversity and behavior. Life seldom works out how one expects, though. I would switch my major to Interdisciplinary Studies, concentrating on English and writing before taking time off a few credit hours short of graduating. That's when I went to New York City to attend General Assembly's Web Development Immersive bootcamp course to change my career. Ever since, I've been working as a developer with a plan to eventually go back to finish that degree that I spent quite a bit of time and energy on, when the time is right.</p>
+					<br/>
+					<p>In my spare time, I play in an ice hockey league. I watch a lot of movies. Occasionally, I try to work on film projects as well, particularly enjoying writing stories or doing video work. I have played with cameras since I was about 12-years-old, even working as an event photographer and student newspaper photo editor for a time during college. I particularly enjoy following the Nashville Predators hockey team and Gritty, the enigmatic mascot of the Philadelphia Flyers. I'll play tennis if I feel like getting mad at myself.</p>
+					<br/>
+					<p>I'm happy to collaborate on a variety of projects, whether they're web-based, writing, or involve my camera. Please click the tabs above to see some examples of my non-development work and hobbies.</p>
+					<br/>
+					<p class="big-note">Check back soon for examples of my photography and video/short film work!</p>
+				</div>
+				<!-- different tab divs go here -->
 			</div>
 			<div id="connect" class="content inactive">
 				<h2 class="content-header">Connect</h2>
@@ -92,23 +98,14 @@
 						</div>
 					</p>
 				</div>
-				<!--<br/>
-				<div>
+				<!-- contact form goes here -->
+				<br/>
+				<div id="temp-contact">
 					<p>If you'd like to collaborate on a project, discuss how I can help you build your project, or just for more information, please send me a message!</p>
-					<br/>
-					<form id="contact-form" onsubmit="submitContact()">
-						<label for="name">Name</label>
-						<input type="text" id="name" name="name">
-						<br/>
-						<label for="email">Email</label>
-						<input type="email" id="email" name="_replyto">
-						<br/>
-						<label for="message">Message</label>
-						<textarea id="message" name="message" placeholder="Get in touch . . . "></textarea>
-						<br/>
-						<input type="submit" value="Send">
-					</form>
-				</div>-->
+					<div class="link-btn" onclick="emailHandler()" id="email-me">
+						<i class="fas fa-envelope"></i> Email me!
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="footer" id="footer">
@@ -116,7 +113,14 @@
 			<div id="footer-text">&copy;<span id="copyright"></span> Garon Bailey</div>
 		</div>
 	</div>
-	
+	<div id="large-photo" class="modal">
+		<div class="modal-content">
+			<div class="photo-back-btn" onclick="photoBack()"></div>
+			<div id="photo-display"></div>
+			<div class="photo-fwd-btn" onclick="photoFwd()"></div>
+			<div id="modal-btn" class="button" onclick="closeModal()">Close</div>
+		</div>
+	</div>
 
 	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> Do I need jquery? My initial thought is No. -->
 </body>

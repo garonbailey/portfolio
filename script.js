@@ -1,6 +1,6 @@
 'use strict';
 
-let copyright, mainContent, navigationMenu, navMenuToggle, themeSwitch, currentTheme;
+let copyright, mainContent, navigationMenu, navMenuToggle, themeSwitch, currentTheme, mailTo;
 
 //set footer text with current year
 let currentYear = new Date();
@@ -35,13 +35,10 @@ const switchColors = () => {
 
 */
 const scrollToTop = () => {
-	console.log("trying to scroll to the top");
 	window.scrollTo(0,0);
 }
 
 const changePage = pageTag => {
-	console.log("hitting change page function");
-	console.log("new page? " + pageTag);
 	let currentActivePage = document.querySelector('.active');
 	let selectedPage = document.getElementById(pageTag);
 	currentActivePage.classList.remove('active');
@@ -53,8 +50,21 @@ const changePage = pageTag => {
 		navMenuToggle.classList.toggle('change');
 	}
 	window.location.hash = pageTag;
-	setTimeout(scrollToTop, 100);
+	setTimeout(scrollToTop, 50);
 	//scrollToTop();
+}
+
+const changeTab = tabTag => {
+	let currentActiveTab = document.querySelector('.active-div');
+	let currentActiveTabBtn = document.querySelector('.active-tab');
+	let selectedTab = document.getElementById(tabTag);
+	let selectedTabBtn = document.getElementById(`${tabTag}-tab`);
+	currentActiveTab.classList.remove('active-div');
+	currentActiveTab.classList.add('inactive-div');
+	currentActiveTabBtn.classList.remove('active-tab');
+	selectedTabBtn.classList.add('active-tab');
+	selectedTab.classList.remove('inactive-div');
+	selectedTab.classList.add('active-div');
 }
 
 const toggleMenu = elem => {
@@ -69,11 +79,11 @@ const submitContact = () => {
 	let formBody = document.getElementById('form-message').value;
 	// let formMethod = "POST";
 	// let formAction = "https://formspree.io/mnqzwvbb";
-	console.log("eventually build AWS Lambda service to handle email contacts");
-	console.log("input form: ", form);
-	console.log("form data! name: ", formName, "; email: ", formReplyTo, "; message body: ", formBody);
-	console.log("method: ", formMethod);
-	console.log("action: ", formAction);
+	// console.log("eventually build AWS Lambda service to handle email contacts");
+	// console.log("input form: ", form);
+	// console.log("form data! name: ", formName, "; email: ", formReplyTo, "; message body: ", formBody);
+	// console.log("method: ", formMethod);
+	// console.log("action: ", formAction);
 	//format the data into the proper json object, i guess? or change the form to a more traditional form with
 	// POST and action
 	//make fetch request with this information
@@ -92,21 +102,44 @@ const externalLink = link => {
 	window.open(externalLinks[link], "_blank");
 }
 
+//for temporary purposes, code to obfuscate a mailto link; eventually, build a back-end email handler and form
+// Email obfuscator script 2.1 by Tim Williams, University of Arizona
+// Random encryption key feature coded by Andrew Moulden
+// This code is freeware provided these four comment lines remain intact
+// A wizard to generate this code is at http://www.jottings.com/obfuscator/
+const emailHandler = () => {
+	let coded = "rFa7L@rFa7L5FVklY.87P",
+	  	key = "IGm9JotzwricY3MODRhkH02PbU71TsaV8nuE4AfedqCpB56xSjgFQyLWvNKXlZ",
+	  	shift = coded.length,
+	  	link = "";
+	  for (let i = 0; i < coded.length; i++) {
+	    if (key.indexOf(coded.charAt(i))==-1) {
+	      var ltr = coded.charAt(i);
+	      link += (ltr);
+	    } else {     
+	      var ltr = (key.indexOf(coded.charAt(i))-shift+key.length) % key.length;
+	      link += (key.charAt(ltr));
+	    }
+	  }
+	window.open(`mailto:${link}?subject=Contact from garonbailey.com`, "_blank");
+	// mailTo.innerHTML = `<a href="mailto:${link}?subject=Contact from garonbailey.com" target="_blank">Email me!</a>`;
+}
+
 window.onload = () => {
 	copyright = document.getElementById('copyright');
 	mainContent = document.getElementById('layout-content-container');
 	navigationMenu = document.getElementById('menu');
 	navMenuToggle = document.getElementById('menu-toggle');
+	// mailTo = document.getElementById('email-me');
 	initProjects();
+	// buildEmailLink();
 
 	copyright.innerText = (currentYear == 2020)?currentYear:'2020-' + currentYear;
 
 	let currentLocation = window.location.hash;
-	console.log("location on load: ", currentLocation);
 	if (currentLocation) {
-		console.log("hash included in url");
 		changePage(currentLocation.replace("#", ""));
 	} else {
-		console.log("no hash, start at homepage");
+		//nothing
 	} 
 }
